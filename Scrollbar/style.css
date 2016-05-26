@@ -1,0 +1,7 @@
+table {
+	text-transform: capitalize;
+}
+
+#menuFichesSelectionnees:hover {
+	height: 200px; /* 85 92 */
+}
