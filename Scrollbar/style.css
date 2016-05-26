@@ -6,3 +6,14 @@ table {
 	/* Minimum pour afficher l'ascenseur dans IE11: 85px */
 	height: 94px;
 }
+
+/* Seulement les couleurs peuvent être modifiées */
+body {
+  scrollbar-base-color: yellow;
+  scrollbar-3dlight-color: red;
+  scrollbar-highlight-color: blue;
+  scrollbar-track-color: grey;
+  scrollbar-arrow-color: black;
+  scrollbar-shadow-color: purple;
+  scrollbar-dark-shadow-color: green;
+}
