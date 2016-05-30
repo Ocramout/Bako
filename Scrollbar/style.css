@@ -1,14 +1,16 @@
-table {
-	text-transform: capitalize;
+div {
+  max-width: 300px;
 }
-
-#menuFichesSelectionnees:hover {
+select {
+  width: 100%;
+}
+.resize:hover {
 	/* Minimum pour afficher l'ascenseur dans IE11: 85px */
 	height: 94px;
 }
 
 /* Seulement les couleurs peuvent être modifiées */
-body {
+#color {
   scrollbar-base-color: yellow;
   scrollbar-3dlight-color: red;
   scrollbar-highlight-color: blue;
