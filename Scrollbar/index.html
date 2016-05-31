@@ -1,26 +1,132 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<title>DIC simple</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <title>DIC test local</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js" type="text/javascript"></script>
 </head>
 <body>
-<h1>Test</h1>
-<table><thead><th>one</th><th>two</th><th>three</th><th>four</th><th>five</th></thead><tbody><tr>
-	<td><select id="one" multiple="multiple" size="2">
-		<option>option 1</option><option>option 2</option><option>option 3</option><option>option 4</option><option>option 5</option><option>option 6</option><option>option 7</option><option>option 8</option><option>option 9</option><option>option 10</option><option>option 11</option><option>option 12</option><option>option 13</option><option>option 14</option><option>option 15</option><option>option 16</option><option>option 17</option><option>option 18</option><option>option 19</option><option>option 20</option></select></td>
-	<td><select id="two" multiple="multiple" size="3">
-		option>option 1</option><option>option 2</option><option>option 3</option><option>option 4</option><option>option 5</option><option>option 6</option><option>option 7</option><option>option 8</option><option>option 9</option><option>option 10</option><option>option 11</option><option>option 12</option><option>option 13</option><option>option 14</option><option>option 15</option><option>option 16</option><option>option 17</option><option>option 18</option><option>option 19</option><option>option 20</option></select></td>
-	<td><select id="three" multiple="multiple">
-		<option>option 1</option><option>option 2</option><option>option 3</option><option>option 4</option><option>option 5</option><option>option 6</option><option>option 7</option><option>option 8</option><option>option 9</option><option>option 10</option><option>option 11</option><option>option 12</option><option>option 13</option><option>option 14</option><option>option 15</option><option>option 16</option><option>option 17</option><option>option 18</option><option>option 19</option><option>option 20</option></select></td>
-	<td><select id="four" multiple="multiple" size="5">
-		<option>option 1</option><option>option 2</option><option>option 3</option><option>option 4</option><option>option 5</option><option>option 6</option><option>option 7</option><option>option 8</option><option>option 9</option><option>option 10</option><option>option 11</option><option>option 12</option><option>option 13</option><option>option 14</option><option>option 15</option><option>option 16</option><option>option 17</option><option>option 18</option><option>option 19</option><option>option 20</option></select></td>
-	<td><select id="five" multiple="multiple" size="6">
-		<option>option 1</option><option>option 2</option><option>option 3</option><option>option 4</option><option>option 5</option><option>option 6</option><option>option 7</option><option>option 8</option><option>option 9</option><option>option 10</option><option>option 11</option><option>option 12</option><option>option 13</option><option>option 14</option><option>option 15</option><option>option 16</option><option>option 17</option><option>option 18</option><option>option 19</option><option>option 20</option></select></td></tr>
-</tbody></table>
-<button onclick="my_fonction()">Click me !</button>
-<p id="user_name"></p>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="script.js"></script>
+  <div>
+  <select size="1">
+    <option value="AIX001-Code de cours">AIX001-Code de cours</option>
+    <option value="AIX003-Type de service de SAGE">AIX003-Type de service de SAGE</option>
+    <option value="AIX008-Discipline-secteur de SAGE">AIX008-Discipline-secteur de SAGE</option>
+    <option value="AIX009-Nombrembre d'unites en equivalence">AIX009-Nombrembre d'unites en equivalence</option>
+    <option value="CHA337-Nombrembre d'heures de stages">CHA337-Nombrembre d'heures de stages</option>
+    <option value="CHA347-Numero de groupe-eleve">CHA347-Numero de groupe-eleve</option>
+    <option value="CHA349-Numero de question">CHA349-Numero de question</option> 
+    <option value="CHA359-Session d'obtention de resultat">CHA359-Session d'obtention de resultat</option>
+    <option value="CHA362-Type de declaration PPS">CHA362-Type de declaration PPS</option>
+    <option value="CHA364-Type d'entente entre organismes">CHA364-Type d'entente entre organismes</option>
+    <option value="CHA370-Categorie de message">CHA370-Categorie de message</option> 
+    <option value="CHA371-Code de cheminement">CHA371-Code de cheminement</option>
+    <option value="CHA374-Code de particularite de mention">CHA374-Code de particularite de mention</option>
+    <option value="CHA382-Code de section de denombrembrement">CHA382-Code de section de denombrembrement</option>
+    <option value="CHA385-Compteur de groupe d'organisme">CHA385-Compteur de groupe d'organisme</option>
+    <option value="CHA387-Contexte d'application de regle">CHA387-Contexte d'application de regle</option>
+    <option value="CHA404-Code de lieu de naissance de mere">CHA404-Code de lieu de naissance de mere</option>
+    <option value="CHA405-Code de lieu de naissance de pere">CHA405-Code de lieu de naissance de pere</option>
+    <option value="CHA491-Mode de calcul de resultat final">CHA491-Mode de calcul de resultat final</option>
+    <option value="CHA569-Operateur de hierarchie de regle">CHA569-Operateur de hierarchie de regle</option>
+    <option value="CHA575-Origine de resultat">CHA575-Origine de resultat</option> 
+    <option value="CHA582-Raison d'annulation d'impression">CHA582-Raison d'annulation d'impression</option>
+    <option value="CHA607-Type d'exigence de regle">CHA607-Type d'exigence de regle</option>
+    <option value="CHA611-Type de resolution de regle">CHA611-Type de resolution de regle</option>
+    <option value="CHAR02-Reussite de cours au secondaire">CHAR02-Reussite de cours au secondaire</option>
+    <option value="CRM003-Reseau d'enseignement">CRM003-Reseau d'enseignement</option>
+    <option value="CRM005-Classe">CRM005-Classe</option>
+    <option value="CRM006-Code de langue detaillee">CRM006-Code de langue detaillee</option>
+    <option value="CRM008-Langue d'enseignement">CRM008-Langue d'enseignement</option>
+    <option value="CRM015-Mode d'enseignement">CRM015-Mode d'enseignement</option> 
+    <option value="CRM016-Mode d'enseignement a distance">CRM016-Mode d'enseignement a distance</option>
+    <option value="CRM018-Categorie d'emploi">CRM018-Categorie d'emploi</option>
+    <option value="CRM020-Secteur administratif">CRM020-Secteur administratif</option>
+    <option value="CRM025-Famille de langue">CRM025-Famille de langue</option> 
+    <option value="CRM026-Groupe de langue">CRM026-Groupe de langue</option> 
+    <option value="DHX006-Rythme hebdomadaire">DHX006-Rythme hebdomadaire</option>
+    <option value="DHX007-Source de financement">DHX007-Source de financement</option>
+    <option value="DHX008-Systeme de sanction">DHX008-Systeme de sanction</option>
+    <option value="DHX009-Voie de formation">DHX009-Voie de formation</option>
+    <option value="UNO075-Nom d'immeuble officiel">UNO075-Nom d'immeuble officiel</option>
+    <option value="UNO916-Date d'ouverture d'immeuble">UNO916-Date d'ouverture d'immeuble</option>
+    <option value="UNO917-Date de fermeture d'immeuble">UNO917-Date de fermeture d'immeuble</option>
+    <option value="UNO920-Superficie permanente d'immeuble">UNO920-Superficie permanente d'immeuble</option>
+    <option value="UNO921-Superficie temporaire d'immeuble">UNO921-Superficie temporaire d'immeuble</option>
+    <option value="UNO922-Superficie totale d'immeuble">UNO922-Superficie totale d'immeuble</option>
+    <option value="UNOR05-Immeuble">UNOR05-Immeuble</option>
+  </select>
+  <br><br>
+  <select class="resize" multiple="multiple" size="2">
+    <option value="DHX006-Rythme hebdomadaire">DHX006-Rythme hebdomadaire</option>
+    <option value="DHX007-Source de financement">DHX007-Source de financement</option>
+    <option value="DHX008-Systeme de sanction">DHX008-Systeme de sanction</option>
+    <option value="DHX009-Voie de formation">DHX009-Voie de formation</option>
+    <option value="UNO075-Nom d'immeuble officiel">UNO075-Nom d'immeuble officiel</option>
+    <option value="UNO916-Date d'ouverture d'immeuble">UNO916-Date d'ouverture d'immeuble</option>
+    <option value="UNO917-Date de fermeture d'immeuble">UNO917-Date de fermeture d'immeuble</option>
+    <option value="UNO920-Superficie permanente d'immeuble">UNO920-Superficie permanente d'immeuble</option>
+    <option value="UNO921-Superficie temporaire d'immeuble">UNO921-Superficie temporaire d'immeuble</option>
+    <option value="UNO922-Superficie totale d'immeuble">UNO922-Superficie totale d'immeuble</option>
+    <option value="UNOR05-Immeuble">UNOR05-Immeuble</option>
+  </select>
+  <br><br>
+  <select class="resize" multiple="multiple" size="3">
+    <option value="DHX006-Rythme hebdomadaire">DHX006-Rythme hebdomadaire</option>
+    <option value="DHX007-Source de financement">DHX007-Source de financement</option>
+    <option value="DHX008-Systeme de sanction">DHX008-Systeme de sanction</option>
+    <option value="DHX009-Voie de formation">DHX009-Voie de formation</option>
+    <option value="UNO075-Nom d'immeuble officiel">UNO075-Nom d'immeuble officiel</option>
+    <option value="UNO916-Date d'ouverture d'immeuble">UNO916-Date d'ouverture d'immeuble</option>
+    <option value="UNO917-Date de fermeture d'immeuble">UNO917-Date de fermeture d'immeuble</option>
+    <option value="UNO920-Superficie permanente d'immeuble">UNO920-Superficie permanente d'immeuble</option>
+    <option value="UNO921-Superficie temporaire d'immeuble">UNO921-Superficie temporaire d'immeuble</option>
+    <option value="UNO922-Superficie totale d'immeuble">UNO922-Superficie totale d'immeuble</option>
+    <option value="UNOR05-Immeuble">UNOR05-Immeuble</option>
+  </select>
+  <br><br>
+  <select class="resize" multiple="multiple" size="4">
+    <option value="DHX006-Rythme hebdomadaire">DHX006-Rythme hebdomadaire</option>
+    <option value="DHX007-Source de financement">DHX007-Source de financement</option>
+    <option value="DHX008-Systeme de sanction">DHX008-Systeme de sanction</option>
+    <option value="DHX009-Voie de formation">DHX009-Voie de formation</option>
+    <option value="UNO075-Nom d'immeuble officiel">UNO075-Nom d'immeuble officiel</option>
+    <option value="UNO916-Date d'ouverture d'immeuble">UNO916-Date d'ouverture d'immeuble</option>
+    <option value="UNO917-Date de fermeture d'immeuble">UNO917-Date de fermeture d'immeuble</option>
+    <option value="UNO920-Superficie permanente d'immeuble">UNO920-Superficie permanente d'immeuble</option>
+    <option value="UNO921-Superficie temporaire d'immeuble">UNO921-Superficie temporaire d'immeuble</option>
+    <option value="UNO922-Superficie totale d'immeuble">UNO922-Superficie totale d'immeuble</option>
+    <option value="UNOR05-Immeuble">UNOR05-Immeuble</option>
+  </select>
+  <br><br>
+  <select class="resize" multiple="multiple" size="5">
+    <option value="DHX006-Rythme hebdomadaire">DHX006-Rythme hebdomadaire</option>
+    <option value="DHX007-Source de financement">DHX007-Source de financement</option>
+    <option value="DHX008-Systeme de sanction">DHX008-Systeme de sanction</option>
+    <option value="DHX009-Voie de formation">DHX009-Voie de formation</option>
+    <option value="UNO075-Nom d'immeuble officiel">UNO075-Nom d'immeuble officiel</option>
+    <option value="UNO916-Date d'ouverture d'immeuble">UNO916-Date d'ouverture d'immeuble</option>
+    <option value="UNO917-Date de fermeture d'immeuble">UNO917-Date de fermeture d'immeuble</option>
+    <option value="UNO920-Superficie permanente d'immeuble">UNO920-Superficie permanente d'immeuble</option>
+    <option value="UNO921-Superficie temporaire d'immeuble">UNO921-Superficie temporaire d'immeuble</option>
+    <option value="UNO922-Superficie totale d'immeuble">UNO922-Superficie totale d'immeuble</option>
+    <option value="UNOR05-Immeuble">UNOR05-Immeuble</option>
+  </select>
+  <br><br>
+  <select id="grandir" onfocus="grandir(6)" onblur="reduire(5)" multiple="multiple" size="5">
+    <option value="DHX006-Rythme hebdomadaire">DHX006-Rythme hebdomadaire</option>
+    <option value="DHX007-Source de financement">DHX007-Source de financement</option>
+    <option value="DHX008-Systeme de sanction">DHX008-Systeme de sanction</option>
+    <option value="DHX009-Voie de formation">DHX009-Voie de formation</option>
+    <option value="UNO075-Nom d'immeuble officiel">UNO075-Nom d'immeuble officiel</option>
+    <option value="UNO916-Date d'ouverture d'immeuble">UNO916-Date d'ouverture d'immeuble</option>
+    <option value="UNO917-Date de fermeture d'immeuble">UNO917-Date de fermeture d'immeuble</option>
+    <option value="UNO920-Superficie permanente d'immeuble">UNO920-Superficie permanente d'immeuble</option>
+    <option value="UNO921-Superficie temporaire d'immeuble">UNO921-Superficie temporaire d'immeuble</option>
+    <option value="UNO922-Superficie totale d'immeuble">UNO922-Superficie totale d'immeuble</option>
+    <option value="UNOR05-Immeuble">UNOR05-Immeuble</option>
+  </select>
+  <br><br>
+</div>
 </body>
 </html>
