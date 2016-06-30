@@ -4,26 +4,20 @@ import sys
 
 class Book:
     def __init__(self):
-        self.Series = ''.join([random.choice(string.ascii_uppercase)
-                               for _ in range(4)])
+        self.Series = ''.join([random.choice(string.ascii_uppercase) for _ in range(4)])
         self.Number = str(random.randint(0, 3))
 
-class ComicRack:
-    class App:
-        def GetLibraryBooks():
-            return generate_book_list(3000)
+def GetLibraryBooks():
+    return generate_book_list(3000)
 
 def generate_book_list(x):
     return [Book() for _ in range(x)]
-
-### END OF OVERRIDE ###
 
 def gen_key(cb):
     return cb.Series + '.' + cb.Number
 
 def BakoDuplicate(filter, a, b):
-    all_books = ComicRack.App.GetLibraryBooks()
-    # all_books = filter
+    all_books = GetLibraryBooks()
 
     books = dict()    # { key:[Book(), Book()] }
     for book in all_books:
@@ -42,15 +36,16 @@ def BakoDuplicate(filter, a, b):
         print('No dupes !')
     else:
         print('My dupes:')
-        logging(dupes)
+        for item in dupes:
+            print(item)
 
     return dupes
 
-def logging(args):
+def my_logger(string):
     for arg in args:
         print(gen_key(arg), ':', arg)
 
 
-#print(sys.version)
+
 filter = generate_book_list(100)
 BakoDuplicate(filter, '', '')
