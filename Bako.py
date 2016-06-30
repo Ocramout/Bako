@@ -1,3 +1,5 @@
+# -*- coding: uft-8 -*-
+
 import random
 import string
 import sys
@@ -15,28 +17,14 @@ def generate_book_list(x):
     return [Book() for _ in range(x)]
 
 def gen_key(cb):
-    series = cb.Series
-    number = cb.Number
-
-    series_type = type(series).__name__
-    number_type = type(number).__name__
-
-    # decode la string seulement si elle est encodee
-    # le type 'str' est un format d
-    # decode() retourne une string de type unicode
-    if series_type != 'str':
-        series = series.decode(encoding=series_type)
-    if number_type != 'str':
-        number = number.decode(encoding=number_type)
-    
-    return series + '.' + number
+    return cb.Series + '.' + cb.Number
 
 def BakoDuplicate(filter, a, b):
     all_books = GetLibraryBooks()
 
     books = dict()    # { key:[Book(), Book()] }
     for book in all_books:
-        key = gen_key(book)
+        key = unicode(gen_key(book), encoding='UTF-8', errors='replace')
         if key not in books.keys():
             books[key] = [book]
         else:
@@ -58,13 +46,14 @@ def BakoDuplicate(filter, a, b):
 
         my_logger("Dupes found on " + time.strftime("%c"))
         for book in set(dupes):
-            my_logger(gen_key(book))
+            key = unicode(gen_key(book), encoding='UTF-8', errors='replace')
+            my_logger(key)
         my_logger("")
 
     return dupes
 
 def my_logger(string):
-    with open('log.txt', 'a') as f:
+    with open('log.txt', mode='a', encoding='UTF-8', errors='replace') as f:
         if type(string).__name__ != 'str':
             string = string.encode(encoding='UTF-8', errors='ignore')
         f.write(string + '\n')
