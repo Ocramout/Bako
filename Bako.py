@@ -1,6 +1,7 @@
 import random
 import string
 import sys
+import time
 
 class Book:
     def __init__(self):
@@ -14,7 +15,21 @@ def generate_book_list(x):
     return [Book() for _ in range(x)]
 
 def gen_key(cb):
-    return cb.Series + '.' + cb.Number
+    series = cb.Series
+    number = cb.Number
+
+    series_type = type(series).__name__
+    number_type = type(number).__name__
+
+    # decode la string seulement si elle est encodee
+    # le type 'str' est un format d
+    # decode() retourne une string de type unicode
+    if series_type != 'str':
+        series = series.decode(encoding=series_type)
+    if number_type != 'str':
+        number = number.decode(encoding=number_type)
+    
+    return series + '.' + number
 
 def BakoDuplicate(filter, a, b):
     all_books = GetLibraryBooks()
@@ -35,15 +50,24 @@ def BakoDuplicate(filter, a, b):
     if len(dupes) == 0:
         print('No dupes !')
     else:
-        print('My dupes:')
-        for item in dupes:
-            print(item)
+        print('%d dupes found !' % (len(dupes)))
+
+        # file reset
+        f = open('log.txt', 'w')
+        f.close()
+
+        my_logger("Dupes found on " + time.strftime("%c"))
+        for book in set(dupes):
+            my_logger(gen_key(book))
+        my_logger("")
 
     return dupes
 
 def my_logger(string):
-    for arg in args:
-        print(gen_key(arg), ':', arg)
+    with open('log.txt', 'a') as f:
+        if type(string).__name__ != 'str':
+            string = string.encode(encoding='UTF-8', errors='ignore')
+        f.write(string + '\n')
 
 
 
