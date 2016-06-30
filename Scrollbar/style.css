@@ -1,0 +1,20 @@
+div {
+  max-width: 300px;
+}
+select {
+  width: 100%;
+}
+.resize:hover {
+	/* Minimum pour afficher l'ascenseur dans IE11: 85px */
+	height: 94px;
+}
+
+/* Seulement les couleurs peuvent être modifiées */
+#color {
+  scrollbar-base-color: yellow;
+  scrollbar-3dlight-color: red;
+  scrollbar-highlight-color: blue;
+  scrollbar-track-color: grey;
+  scrollbar-arrow-color: black;
+  scrollbar-shadow-color: purple;
+}
