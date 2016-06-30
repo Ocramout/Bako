@@ -43,6 +43,9 @@ def BakoDuplicate(filter, a, b):
     else:
         print('My dupes:')
         logging(dupes)
+
+    return dupes
+
 def logging(args):
     for arg in args:
         print(gen_key(arg), ':', arg)
