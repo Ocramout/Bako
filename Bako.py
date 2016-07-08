@@ -1,9 +1,10 @@
-# -*- coding: uft-8 -*-
+# -*- coding: UTF-8 -*-
 
 import random
 import string
 import sys
 import time
+from datetime import datetime
 
 class Book:
     def __init__(self):
@@ -19,46 +20,89 @@ def generate_book_list(x):
 def gen_key(cb):
     return cb.Series + '.' + cb.Number
 
+def get_random_unicode(length):
+
+    try:
+        get_char = unichr
+    except NameError:
+        get_char = chr
+
+    # Update this to include code point ranges to be sampled
+    include_ranges = [
+        ( 0x0021, 0x0021 ),
+        ( 0x0023, 0x0026 ),
+        ( 0x0028, 0x007E ),
+        ( 0x00A1, 0x00AC ),
+        ( 0x00AE, 0x00FF ),
+        ( 0x0100, 0x017F ),
+        ( 0x0180, 0x024F ),
+        ( 0x2C60, 0x2C7F ),
+        ( 0x16A0, 0x16F0 ),
+        ( 0x0370, 0x0377 ),
+        ( 0x037A, 0x037E ),
+        ( 0x0384, 0x038A ),
+        ( 0x038C, 0x038C ),
+    ]
+
+    alphabet = [
+        get_char(code_point) for current_range in include_ranges
+            for code_point in range(current_range[0], current_range[1] + 1)
+    ]
+    return ''.join(random.choice(alphabet) for i in range(length))
+
+
+    ####  END OF OVERRIDE  ####
+
+
 def BakoDuplicate(filter, a, b):
     all_books = GetLibraryBooks()
 
-    books = dict()    # { key:[Book(), Book()] }
+    books = dict()
+    dupes = set()
     for book in all_books:
-        key = unicode(gen_key(book), encoding='UTF-8', errors='replace')
-        if key not in books.keys():
+        #key = gen_key(book)
+        key = get_random_unicode(2)
+        if key == None:
+            continue
+        elif key not in books.keys():
             books[key] = [book]
         else:
             books[key].append(book)
+            dupes.add(key)
 
-    dupes = []
-    for key, book in books.items():
-        if len(book) > 1:
-            dupes += [b for b in book]
-    
-    if len(dupes) == 0:
-        print('No dupes !')
-    else:
-        print('%d dupes found !' % (len(dupes)))
+    dupes_obj = []
+    number_of_dupes = len(dupes)
+    template = "{{}} dupes found on {}".format(datetime.now())
 
-        # file reset
-        f = open('log.txt', 'w')
+    if number_of_dupes == 0:
+        print(template.format("No"))
+        return dupes_obj
+
+    for dupe in dupes:
+        dupes_obj += books[dupe]
+
+    my_logger(template.format(number_of_dupes), dupes)
+
+
+    return dupes_obj
+
+
+def my_logger(template, args):
+    f = open("log.txt", mode="a")
+
+    try:
+        f.write(template + '\n')
+        print(template)
+
+        for arg in args:
+            string = arg.encode(encoding='utf8', errors='ignore')
+            f.write(string + '\n')
+            print(string)
+        f.write('\n')
+    finally:
         f.close()
-
-        my_logger("Dupes found on " + time.strftime("%c"))
-        for book in set(dupes):
-            key = unicode(gen_key(book), encoding='UTF-8', errors='replace')
-            my_logger(key)
-        my_logger("")
-
-    return dupes
-
-def my_logger(string):
-    with open('log.txt', mode='a', encoding='UTF-8', errors='replace') as f:
-        if type(string).__name__ != 'str':
-            string = string.encode(encoding='UTF-8', errors='ignore')
-        f.write(string + '\n')
-
 
 
 filter = generate_book_list(100)
+filter = None
 BakoDuplicate(filter, '', '')
